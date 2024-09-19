@@ -7,11 +7,11 @@ const App = () => {
   const [newCategory, setNewCategory] = useState('');
   const [categories, setCategories] = useState([]);
 
-  const [{ data: response = {}, loading, error }, refetch] = useAxios('http://localhost:5000/api/expenses');
+  const [{ data: response = {}, loading, error }, refetch] = useAxios('https://personal-expense-tracker-vd4o.onrender.com/api/expenses');
 
   const [{ data: postResponse }, addExpense] = useAxios(
     {
-      url: 'http://localhost:5000/api/expenses',
+      url: 'https://personal-expense-tracker-vd4o.onrender.com/api/expenses',
       method: 'POST',
     },
     { manual: true }
