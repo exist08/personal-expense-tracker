@@ -7,12 +7,13 @@ app.use(cors());
 
 // PostgreSQL connection details (replace with your actual credentials)
 const pool = new Pool({
-  user: 'PG_USER', // Replace with your PostgreSQL username
-  password: 'PG_PASS', // Replace with your PostgreSQL password
-  host: 'PG_HOST', // Replace with your PostgreSQL host address (if different)
-  database: 'PG_DB', // Replace with your PostgreSQL database name
-  port: 5432, // default PostgreSQL port
+  user: process.env.PG_USER,
+  password: process.env.PG_PASS,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DB,
+  port: process.env.PG_PORT || 5432,  // Default PostgreSQL port
 });
+
 
 // Function to check if the 'expenses' table exists and create it if it doesn't
 const createExpensesTable = async () => {
